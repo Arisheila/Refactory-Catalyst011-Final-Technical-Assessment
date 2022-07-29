@@ -6,11 +6,12 @@ require('dotenv').config();
 
 
 // Express Session
-// const expressSession = require('express-session')({
-//   secret: 'secret',
-//   resave: false,
-//   saveUninitialized: false,
-// });
+const expressSession = require('express-session')({
+  secret: 'secret',
+  resave: false,
+  saveUninitialized: false,
+});
+
 
 const indexRoutes = require("./routes/indexRoutes")
 // const salesRoutes = require("./routes/salesroutes")
@@ -46,9 +47,9 @@ app.set('view engine', 'pug');
 app.set('views', './views');
 
 // Express Middleware
-// app.use(express.urlencoded({ extended: true }));
-// app.use(express.static(path.join(__dirname, 'public')));
-// app.use(expressSession);
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(expressSession);
 
 // configuring passport
 // app.use(passport.initialize());
@@ -82,6 +83,6 @@ app.get('*', (req, res) => {
 });
 
 // server
-app.listen(4000, () => console.log('Listening on Port 4000'));
+app.listen(4001, () => console.log('Listening on Port 4000'));
 
 
