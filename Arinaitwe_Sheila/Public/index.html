@@ -12,8 +12,8 @@
 <body>
     
     <div class= "container">
-        <form name="registration" onblur="firstFocus()"> 
-            <img src="/images/header-images/form-header-image.png">
+        <form name="registration" onblur="firstFocus()" onsubmit="return Validation()"> 
+            <img src = "/images/header-images/form-header-image.png">
             <p class="fs-6">Ministry of Health</p>
             <p class="fs-2">COVID-19(CORONA VIRUS)</p>
             <p class="fs-6">Virus-Test Registration Form</p>
@@ -21,7 +21,7 @@
             <div class="row">
                 <div class="col-6">
                     <label>Surname</label>
-                    <input class="form-control" type="text" name="surname" onblur="valSur()" onsubmit=" return Validation()">
+                    <input class="form-control" type="text" name="surname" onblur="valSur()" >
                     <p class="one"></p>
                 </div>
                 <div class="col-6">
@@ -58,8 +58,8 @@
     <div class="col-12">
         <label>Gender</label>
         <br/>
-     Male :<input  type="radio"  name="male" checked required>
-     Female :<input   type="radio"  name="male" >
+     Male :<input  type="radio"  name="gender" checked required  value="male">
+     Female :<input   type="radio"  name="gender"  value="female">
     </div>
 </div>
 <div class="row">
@@ -74,7 +74,7 @@
         </select>
 <p class="six"></p>
 </div>
-<button type="submit">register</button>
+<button type="submit" class="primary">register</button>
 </form>
 <script src="index.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

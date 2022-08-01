@@ -9,9 +9,9 @@ head
 .container
   form(name='registration' onblur='firstFocus()' action="/covid" method="POST" onsubmit=' return Validation()')
     img(src='form-header-image.png')
-    p.fs-6 Ministry of Health
-    p.fs-2 COVID-19(CORONA VIRUS)
-    p.fs-6 Virus-Test Registration Form
+    p.fs-6.text-center Ministry of Health
+    p.fs-2.text-center COVID-19(CORONA VIRUS)
+    p.fs-6.text-center Virus-Test Registration Form
     .row
       .col-6
         label Surname
@@ -44,9 +44,9 @@ head
         label Gender
         br
         |      Male :
-        input(type='radio' name='male' checked='' required='')
+        input(type='radio' name='gender' value="male" required='')
         |      Female :
-        input(type='radio' name='male')
+        input(type='radio' name='gender' value="female")
     .row
       .col-6
         label Category
@@ -57,6 +57,6 @@ head
           option Alert
           option Volunteer
         p.six
-      button(type='submit') register
+      button.btn-primary.btn-sm(type='submit') register
   script(src='index.js')
   script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js' integrity='sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p' crossorigin='anonymous')

@@ -28,7 +28,7 @@ router.post('/covid', async(req,res)=>{
 router.get('/covid/report', async(req, res) => {
     try{
         let items = await Index.find();
-        res.render('report',{
+        res.render('success',{
             indexes:items,
           }  )}
     catch(err){
@@ -37,15 +37,7 @@ router.get('/covid/report', async(req, res) => {
     }
 });
 
-// delete route
-router.post('/covid/delete', async (req, res) => {
-    try {
-        await Index.deleteOne({ _id: req.body.id })
-        res.redirect('back')
-    } catch (err) {
-        res.status(400).send("Unable to delete item in the database");
-    }
-})
+
 
 
 
